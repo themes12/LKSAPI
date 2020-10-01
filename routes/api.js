@@ -65,10 +65,10 @@ router.post('/', function(req, res) {
         res.json({statusCode: "ERROR", notifyType: 'error', headerText: 'Error connecting API!', outputText: "Unauthorize"});
       });
     }else{
-      res.json({notifyType: 'ERROR', headerText: 'Error connecting API!', outputText: "uid and std_id must fill in."});
+      res.json({statusCode: "ERROR", notifyType: 'ERROR', headerText: 'Error connecting API!', outputText: "uid and std_id must fill in."});
     }
   }else{
-    res.json({notifyType: 'ERROR', headerText: 'Error connecting API!', outputText: "Invalid Request."});
+    res.json({statusCode: "ERROR", notifyType: 'ERROR', headerText: 'Error connecting API!', outputText: "Invalid Request."});
   }
 });
 
