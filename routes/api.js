@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res) {
   if(req.method == "POST"){
+      console.log(req.body);
     var uid = req.body.uid;
     var std_id = req.body.std_id;
     if(uid && std_id){
