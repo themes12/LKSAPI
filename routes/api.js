@@ -37,7 +37,8 @@ router.post('/', function(req, res) {
       };
 
       requestPromise(options).then(function (parsedBody) {
-        request({
+        res.json({statusCode: "SUCCESS", notifyType: 'success', headerText: 'สำเร็จ', outputText: "ลงชื่อสำเร็จ"});
+        /*request({
           headers: {
             'Content-Length': contentLength,
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -59,7 +60,7 @@ router.post('/', function(req, res) {
             }else{
               res.json({statusCode: "ERROR", notifyType: 'error', headerText: 'Error connecting API!', outputText: "Please contact webmaster."});
             }
-        });
+        });*/
       }).catch(function (err) {
         res.json({statusCode: "ERROR", notifyType: 'error', headerText: 'Error connecting API!', outputText: "Unauthorize"});
       });
