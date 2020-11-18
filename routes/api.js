@@ -15,9 +15,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res) {
   if(req.method == "POST"){
-      console.log(req.body);
     var uid = req.body.uid;
     var std_id = req.body.std_id;
+    var version = req.body.version;
     if(uid && std_id){
       var form = {
         inputBox: std_id
@@ -37,7 +37,9 @@ router.post('/', function(req, res) {
         json: true
       };
 
-      requestPromise(options).then(function (parsedBody) {
+      console.log(version);
+      res.json({statusCode: "SUCCESS", notifyType: 'success', headerText: 'สำเร็จ', outputText: "ลงชื่อสำเร็จ"});
+      /*requestPromise(options).then(function (parsedBody) {
         request({
           headers: {
             'Content-Length': contentLength,
@@ -63,7 +65,7 @@ router.post('/', function(req, res) {
         });
       }).catch(function (err) {
         res.json({statusCode: "ERROR", notifyType: 'error', headerText: 'Error connecting API!', outputText: "Unauthorize"});
-      });
+      });*/
     }else{
       res.json({statusCode: "ERROR", notifyType: 'ERROR', headerText: 'Error connecting API!', outputText: "uid and std_id must fill in."});
     }
