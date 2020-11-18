@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
         const b = ~~oldParts[i] // parse int
         if (a > b) return true
         if (a < b) return false
-        if (a = b) return true
+        if (a == b) return true
       }
       return false
     }
