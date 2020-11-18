@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
     var std_id = req.body.std_id;
     var version = req.body.version;
       
-    var newVer = "0.0.0";
+    var newVer = "1.0.0";
     function isNewerVersion (oldVer, newVer) {
       const oldParts = oldVer.split('.')
       const newParts = newVer.split('.')
@@ -28,6 +28,7 @@ router.post('/', function(req, res) {
         const b = ~~oldParts[i] // parse int
         if (a > b) return true
         if (a < b) return false
+        if (a = b) return true
       }
       return false
     }
