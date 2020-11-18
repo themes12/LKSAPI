@@ -38,6 +38,8 @@ router.post('/', function(req, res) {
       };
 
       console.log(version);
+      var versionSplit = version.split(".");
+      console.log(versionSplit);
       res.json({statusCode: "SUCCESS", notifyType: 'success', headerText: 'สำเร็จ', outputText: "ลงชื่อสำเร็จ"});
       /*requestPromise(options).then(function (parsedBody) {
         request({
