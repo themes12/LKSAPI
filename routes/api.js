@@ -53,8 +53,7 @@ router.post('/', function(req, res) {
       };
 
       if(isNewerVersion(newVer, version)){
-          res.json({statusCode: "SUCCESS", notifyType: 'success', headerText: 'สำเร็จ', outputText: "ลงชื่อสำเร็จ"});
-          /*requestPromise(options).then(function (parsedBody) {
+          requestPromise(options).then(function (parsedBody) {
             request({
               headers: {
                 'Content-Length': contentLength,
@@ -80,7 +79,7 @@ router.post('/', function(req, res) {
             });
           }).catch(function (err) {
             res.json({statusCode: "ERROR", notifyType: 'error', headerText: 'Error connecting API!', outputText: "Unauthorize"});
-          });*/
+          });
       }else{
           res.json({statusCode: "ERROR", notifyType: 'error', headerText: 'Application is too old!', outputText: "Please update your app."});
       }
