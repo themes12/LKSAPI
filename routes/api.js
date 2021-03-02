@@ -6,7 +6,7 @@ var body = require('body-parser');
 var iconv  = require('iconv-lite');
 var requestPromise = require('request-promise');
 var router = express.Router();
-const apiKey = "AIzaSyAMX-yLiA4twc0Uxv4zJBorKGvjPYFOsTA";
+const apiKey = ""; //apikey firebase
 const { JSDOM } = jsdom;
 
 router.get('/', function(req, res, next) {
